@@ -39,9 +39,9 @@ message CreateUserReply {
 
 message User {
 	required string _id = 1;
-	optional string firstName = 2;
-	optional string lastName = 3;
-	optional string pin = 4;
-	optional string collectionName = 5;
+	string firstName = 2;
+	string lastName = 3;
+	string pin = 4;
+	string collectionName = 5;
 	required Meta meta = 6;
 }
