@@ -1,0 +1,47 @@
+syntax = "proto3";
+package Users;
+
+// Actions
+// rpc CreateUser(CreateUserRequest) return (CreateUserRepy);
+
+
+enum Command {
+	CREATE_USER_CMD = 0;
+}
+
+enum Reply {
+	CREATED_USER_REPLY = 0;
+	CREATE_USER_FAILED_REPLY = 1;
+}
+
+message Meta {
+	string createdAt = 1;
+	string updatedAt = 2;
+}
+
+message NewUser {
+	required string firstName = 1;
+	required string lastName = 2;
+	required string pin = 3;
+	required string role = 4;
+}
+
+message CreateUserRequest {
+	NewUser user = 1;
+	Command type = 2;
+}
+
+message CreateUserReply {
+	string userId = 1;
+	Reply type = 2;
+	bool success = 3;
+}
+
+message User {
+	required string _id = 1;
+	optional string firstName = 2;
+	optional string lastName = 3;
+	optional string pin = 4;
+	optional string collectionName = 5;
+	required Meta meta = 6;
+}
