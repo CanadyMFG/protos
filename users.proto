@@ -20,10 +20,10 @@ message Meta {
 }
 
 message NewUser {
-	required string firstName = 1;
-	required string lastName = 2;
-	required string pin = 3;
-	required string role = 4;
+	string firstName = 1;
+	string lastName = 2;
+	string pin = 3;
+	string role = 4;
 }
 
 message CreateUserRequest {
@@ -38,10 +38,10 @@ message CreateUserReply {
 }
 
 message User {
-	required string _id = 1;
+	string _id = 1;
 	string firstName = 2;
 	string lastName = 3;
 	string pin = 4;
 	string collectionName = 5;
-	required Meta meta = 6;
+	Meta meta = 6;
 }
